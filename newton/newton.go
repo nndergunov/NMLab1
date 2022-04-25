@@ -34,6 +34,9 @@ func newton(a, b, x0, fDMin, sDMax, epsilon float64, f, firstDeriv, secondDeriv 
 
 	for i := 0; i < iterations; i++ {
 		res = res - f(res)/firstDeriv(x0)
+
+		fmt.Println("xn: ", res)
+		fmt.Println("f(xn): ", f(res))
 	}
 
 	approx := math.Pow(q, math.Pow(2, float64(iterations)-1)) * maxDist

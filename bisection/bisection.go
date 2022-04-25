@@ -20,9 +20,13 @@ func bisection(a, b, epsilon float64, f func(float64) float64) (float64, error) 
 	for i := 0; i < iterations; i++ {
 		c = (a + b) / 2
 
+		fmt.Println("xn: ", c)
+
 		if f(c) == 0.0 {
 			break
 		}
+
+		fmt.Println("f(xn): ", f(c))
 
 		if f(c)*f(a) > 0 {
 			a = c
