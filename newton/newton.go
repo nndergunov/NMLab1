@@ -30,7 +30,7 @@ func newton(a, b, x0, fDMin, sDMax, epsilon float64, f, firstDeriv, secondDeriv 
 
 	iterations := int(math.Floor(math.Log2((math.Log(maxDist/epsilon))/(math.Log(1/q)))+1) + 1)
 
-	var res float64
+	var res float64 = x0
 
 	for i := 0; i < iterations; i++ {
 		res = res - f(res)/firstDeriv(x0)
